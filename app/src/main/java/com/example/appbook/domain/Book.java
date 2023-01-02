@@ -1,10 +1,11 @@
 package com.example.appbook.domain;
 
+import static androidx.room.ForeignKey.CASCADE;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
-
-import java.time.Year;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,11 +15,14 @@ import lombok.NonNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Entity(foreignKeys = {
+        @ForeignKey(entity = Publisher.class, parentColumns = "id", childColumns = "idPublisher", onDelete = CASCADE)
+})
 public class Book {
 
     @PrimaryKey(autoGenerate = true)
     private long id;
+    @ColumnInfo
     @NonNull
     private String name;
     @ColumnInfo
@@ -29,4 +33,74 @@ public class Book {
     private String descripcion;
     @ColumnInfo
     private boolean ebook;
+    @ColumnInfo //(name = "id_publisher")
+    private long idPublisher;
+
+//    public Book(long id, String name, int yearEdition, int pagesNumber, String descripcion, boolean ebook) {
+//        this.id = id;
+//        this.name = name;
+//        this.yearEdition = yearEdition;
+//        this.pagesNumber = pagesNumber;
+//        this.descripcion = descripcion;
+//        this.ebook = ebook;
+//    }
+
+    public Book() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getYearEdition() {
+        return yearEdition;
+    }
+
+    public void setYearEdition(int yearEdition) {
+        this.yearEdition = yearEdition;
+    }
+
+    public int getPagesNumber() {
+        return pagesNumber;
+    }
+
+    public void setPagesNumber(int pagesNumber) {
+        this.pagesNumber = pagesNumber;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public boolean isEbook() {
+        return ebook;
+    }
+
+    public void setEbook(boolean ebook) {
+        this.ebook = ebook;
+    }
+
+    public long getIdPublisher() {
+        return idPublisher;
+    }
+
+    public void setIdPublisher(long idPublisher) {
+        this.idPublisher = idPublisher;
+    }
 }

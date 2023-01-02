@@ -7,25 +7,29 @@ import androidx.room.PrimaryKey;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Library {
+public class Publisher {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey (autoGenerate = true)
     private long id;
     @ColumnInfo
+    @NonNull
     private String name;
     @ColumnInfo
     private String city;
     @ColumnInfo //(name = "zip_code")
     private String zipCode;
-    @ColumnInfo //(name = "phoneNumber")
+    @ColumnInfo //(name = "phone_number")
     private String phoneNumber;
+    @ColumnInfo
+    private String descripriton;
 
-    public Library() {
+    public Publisher() {
     }
 
     public long getId() {
@@ -66,5 +70,13 @@ public class Library {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getDescripriton() {
+        return descripriton;
+    }
+
+    public void setDescripriton(String descripriton) {
+        this.descripriton = descripriton;
     }
 }

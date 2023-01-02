@@ -25,13 +25,15 @@ public interface BookDao {
     @Query("DELETE FROM book WHERE id = :id")
     void deleteById(long id);
 
-    //
+    //si quiero inserir uno o varios debo escribir void insert(Book... book)
     @Insert
     void insert(Book book);
 
+    //borrar
     @Delete
     void delete(Book book);
 
+    //actualizar
     @Update
     void update(Book book);
 }
