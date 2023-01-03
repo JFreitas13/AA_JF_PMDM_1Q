@@ -29,9 +29,9 @@ public class Publisher {
     @ColumnInfo
     private String descripriton;
 
-    public Publisher() {
-    }
-
+//    public Publisher() {
+//    }
+//
     public long getId() {
         return id;
     }

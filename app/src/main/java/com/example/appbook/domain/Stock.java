@@ -30,9 +30,9 @@ public class Stock {
     @ColumnInfo
     private int quantity;
 
-    public Stock() {
-    }
-
+//    public Stock() {
+//    }
+//
     public long getId() {
         return id;
     }

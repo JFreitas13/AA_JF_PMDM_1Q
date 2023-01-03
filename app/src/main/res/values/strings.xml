@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AppBook</string>
+    <string name="imageDescription">Image</string>
 </resources>

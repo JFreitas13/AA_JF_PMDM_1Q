@@ -25,9 +25,9 @@ public class Library {
     @ColumnInfo //(name = "phoneNumber")
     private String phoneNumber;
 
-    public Library() {
-    }
-
+//    public Library() {
+//    }
+//
     public long getId() {
         return id;
     }

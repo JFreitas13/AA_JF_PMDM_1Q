@@ -12,9 +12,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+//@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Entity(foreignKeys = {
         @ForeignKey(entity = Publisher.class, parentColumns = "id", childColumns = "idPublisher", onDelete = CASCADE)
 })
@@ -36,14 +36,14 @@ public class Book {
     @ColumnInfo //(name = "id_publisher")
     private long idPublisher;
 
-//    public Book(long id, String name, int yearEdition, int pagesNumber, String descripcion, boolean ebook) {
-//        this.id = id;
-//        this.name = name;
-//        this.yearEdition = yearEdition;
-//        this.pagesNumber = pagesNumber;
-//        this.descripcion = descripcion;
-//        this.ebook = ebook;
-//    }
+    public Book(/*long id,*/ String name, int yearEdition, int pagesNumber, String descripcion /*, boolean ebook*/) {
+        /*this.id = id;*/
+        this.name = name;
+        this.yearEdition = yearEdition;
+        this.pagesNumber = pagesNumber;
+        this.descripcion = descripcion;
+        /*this.ebook = ebook;*/
+    }
 
     public Book() {
     }
