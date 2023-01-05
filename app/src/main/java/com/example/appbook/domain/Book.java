@@ -1,23 +1,18 @@
 package com.example.appbook.domain;
 
-import static androidx.room.ForeignKey.CASCADE;
-
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 //@Data
 //@AllArgsConstructor
 //@NoArgsConstructor
-@Entity(foreignKeys = {
-        @ForeignKey(entity = Publisher.class, parentColumns = "id", childColumns = "idPublisher", onDelete = CASCADE)
-})
+//@Entity(foreignKeys = {
+//        @ForeignKey(entity = Publisher.class, parentColumns = "id", childColumns = "idPublisher", onDelete = CASCADE)
+//})
+@Entity
 public class Book {
 
     @PrimaryKey(autoGenerate = true)
@@ -36,8 +31,16 @@ public class Book {
     @ColumnInfo //(name = "id_publisher")
     private long idPublisher;
 
-    public Book(/*long id,*/ String name, int yearEdition, int pagesNumber, String descripcion /*, boolean ebook*/) {
-        /*this.id = id;*/
+    public Book(long id, String name, int yearEdition, int pagesNumber, String descripcion /*, boolean ebook*/) {
+        this.id = id;
+        this.name = name;
+        this.yearEdition = yearEdition;
+        this.pagesNumber = pagesNumber;
+        this.descripcion = descripcion;
+        /*this.ebook = ebook;*/
+    }
+
+    public Book( String name, int yearEdition, int pagesNumber, String descripcion /*, boolean ebook*/) {
         this.name = name;
         this.yearEdition = yearEdition;
         this.pagesNumber = pagesNumber;
@@ -68,12 +71,23 @@ public class Book {
         return yearEdition;
     }
 
+    public String getYearEditionString() {
+
+        String yearEditionString = String.valueOf(yearEdition);
+        return yearEditionString;
+    }
+
     public void setYearEdition(int yearEdition) {
         this.yearEdition = yearEdition;
     }
 
     public int getPagesNumber() {
         return pagesNumber;
+    }
+
+    public String getPagesNumberString() {
+        String pagesNumberString = String.valueOf(pagesNumber);
+        return pagesNumberString;
     }
 
     public void setPagesNumber(int pagesNumber) {

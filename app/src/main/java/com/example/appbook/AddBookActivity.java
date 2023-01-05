@@ -2,16 +2,11 @@ package com.example.appbook;
 
 import static com.example.appbook.db.Constants.DATABASE_NAME;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
@@ -25,35 +20,40 @@ public class AddBookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_book);
     }
 
-    //boton añadir libro
-    public void addBook(View view) {
-        EditText etName = findViewById(R.id.NameEditText);
-        EditText etYearEdition = findViewById(R.id.YearTextNumber);
-        EditText etPageNumber = findViewById(R.id.PagesTextNumber);
-        EditText etDescription = findViewById(R.id.DescriptionEditText);
+    //boton AÑADIR
+    public void addButton(View view) {
+        EditText etName = findViewById(R.id.nameEditText);
+        EditText etYearEdition = findViewById(R.id.yearTextNumber);
+        EditText etPageNumber = findViewById(R.id.pagesTextNumber);
+        EditText etDescription = findViewById(R.id.descriptionEditText);
 
         String name = etName.getText().toString();
-        String yearEdition = etYearEdition.getText().toString();
-        int yearEditionI = Integer.parseInt(yearEdition);
-        String pageNumber = etPageNumber.getText().toString();
-        int pageNumberI = Integer.parseInt(pageNumber);
+        String yearEditionS = etYearEdition.getText().toString();
+        int yearEdition = Integer.parseInt(yearEditionS);
+        String pageNumberS = etPageNumber.getText().toString();
+        int pageNumber = Integer.parseInt(pageNumberS);
         String description = etDescription.getText().toString();
 
-        Book book = new Book(name, yearEditionI, pageNumberI, description);
+        //crear libro
+        Book book = new Book(name, yearEdition, pageNumber, description);
+
+        //creo BBDD
         final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
                 .allowMainThreadQueries().build();
         db.bookDao().insert(book);
 
-        Toast.makeText(this,"Libro añadido correctamente", Toast.LENGTH_SHORT).show();
+        //mensaje emergente
+        Toast.makeText(this, R.string.book_add_message, Toast.LENGTH_SHORT).show();
         etName.setText("");
         etYearEdition.setText("");
         etPageNumber.setText("");
         etDescription.setText("");
         etName.requestFocus();
 
-    }
 
-    public void cancel(View view) {
+        //boton CANCELAR
+    }
+    public void cancelButton(View view) {
         onBackPressed();
 
     }

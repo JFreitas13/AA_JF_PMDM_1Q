@@ -21,6 +21,10 @@ public interface BookDao {
     @Query("SELECT * FROM book WHERE name = :name")
     Book getByName(String name);
 
+    //buscar por ID
+    @Query("SELECT * FROM book WHERE id = :id")
+    Book getById(long id);
+
     //borrar por id
     @Query("DELETE FROM book WHERE id = :id")
     void deleteById(long id);

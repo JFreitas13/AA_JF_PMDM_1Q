@@ -6,14 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/book_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="357dp"
-        android:text="Libros"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="408dp"
+        android:layout_height="659dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/main_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Qué deseas gestionar?"
+            android:textAlignment="center"
+            android:textColor="@color/teal_700"
+            android:textSize="34sp" />
+
+        <Button
+            android:id="@+id/book_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:padding="10dp"
+            android:text="Libros" />
+
+        <Button
+            android:id="@+id/library_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="25dp"
+            android:text="Librerias" />
+
+        <Button
+            android:id="@+id/publisher_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="25dp"
+            android:text="Editoriales" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/main_image"
+            android:layout_width="match_parent"
+            android:layout_height="232dp"
+            tools:srcCompat="@tools:sample/avatars" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/nameModifyEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -27,7 +27,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/yearTextNumber"
+            android:id="@+id/yearModifyTextNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -36,7 +36,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/pagesTextNumber"
+            android:id="@+id/pagesModifyTextNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -45,7 +45,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/descriptionEditText"
+            android:id="@+id/descriptionModifyEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -74,15 +74,15 @@
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:onClick="addButton"
-            android:text="Añadir" />
+            android:onClick="modifyButton"
+            android:text="Confirmar" />
 
         <Button
-            android:id="@+id/cancel__modify_book_button"
+            android:id="@+id/cancel_modify_book_button"
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:onClick="cancelButton"
+            android:onClick="cancelModifyButton"
             android:text="Cancelar" />
     </LinearLayout>
 

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,10 +31,11 @@ public class ListBooksActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_books);
 
+        //instanciar la lista a vacio
         bookList = new ArrayList<>();
 
         RecyclerView recyclerView = findViewById(R.id.book_list);
-        recyclerView.setHasFixedSize(true);;
+        recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
@@ -45,10 +47,12 @@ public class ListBooksActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        //objeto que permite acceder a la BBDD
         final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
                 .allowMainThreadQueries().build();
-        bookList.clear();
-        bookList.addAll(db.bookDao().getAll());
+
+        bookList.clear(); //vaciar la BBDD
+        bookList.addAll(db.bookDao().getAll()); //cojo todos los elementos que devuelva la BBDD
         adapter.notifyDataSetChanged();
     }
 
