@@ -40,7 +40,7 @@ public class Book {
         /*this.ebook = ebook;*/
     }
 
-    public Book( String name, int yearEdition, int pagesNumber, String descripcion /*, boolean ebook*/) {
+    public Book(String name, int yearEdition, int pagesNumber, String descripcion /*, boolean ebook*/) {
         this.name = name;
         this.yearEdition = yearEdition;
         this.pagesNumber = pagesNumber;

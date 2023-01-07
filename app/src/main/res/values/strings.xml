@@ -3,4 +3,5 @@
     <string name="imageDescription">Image</string>
     <string name="are_you_sure_message">¿Estás seguro que quieres eliminar este libro?</string>
     <string name="book_add_message">Libro añadido correctamente</string>
+    <string name="library_add_message">Libreria añadida correctamente</string>
 </resources>

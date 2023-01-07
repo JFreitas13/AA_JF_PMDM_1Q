@@ -70,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
-            android:id="@+id/modified_book_button"
+            android:id="@+id/add_book_button"
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -78,7 +78,7 @@
             android:text="Añadir" />
 
         <Button
-            android:id="@+id/cancel__modify_book_button"
+            android:id="@+id/cancel_add_book_button"
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"

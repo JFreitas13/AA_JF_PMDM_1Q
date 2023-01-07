@@ -2,45 +2,44 @@ package com.example.appbook;
 
 import static com.example.appbook.db.Constants.DATABASE_NAME;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.appbook.adapter.BookAdapter;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
+
+import com.example.appbook.adapter.LibraryAdapter;
 import com.example.appbook.db.AppDatabase;
-import com.example.appbook.domain.Book;
+import com.example.appbook.domain.Library;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListBooksActivity extends AppCompatActivity {
+public class ListLibrariesActivity extends AppCompatActivity {
 
-    private List<Book> bookList;
-    private BookAdapter adapter;
+    private List<Library> libraryList;
+    private LibraryAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_books);
+        setContentView(R.layout.activity_list_libraries);
 
         //instanciar la lista a vacio
-        bookList = new ArrayList<>();
+        libraryList = new ArrayList<>();
 
-        RecyclerView recyclerView = findViewById(R.id.book_list);
+        RecyclerView recyclerView = findViewById(R.id.library_list);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new BookAdapter(this, bookList);
+        adapter = new LibraryAdapter(this, libraryList);
         recyclerView.setAdapter(adapter);
     }
 
@@ -52,8 +51,8 @@ public class ListBooksActivity extends AppCompatActivity {
         final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
                 .allowMainThreadQueries().build();
 
-        bookList.clear(); //vaciar la BBDD
-        bookList.addAll(db.bookDao().getAll()); //cojo todos los elementos que devuelva la BBDD
+        libraryList.clear(); //vaciar la BBDD
+        libraryList.addAll(db.libraryDao().getAll()); //cojo todos los elementos que devuelva la BBDD
         adapter.notifyDataSetChanged();
     }
 
@@ -64,15 +63,15 @@ public class ListBooksActivity extends AppCompatActivity {
     //crear el menu actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.actionbar_book, menu);
+        getMenuInflater().inflate(R.menu.actionbar_library, menu);
         return true;
     }
 
     //eleccion en el actionBar
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.add_Book) {
-            Intent intent = new Intent(this, AddBookActivity.class); //para ir a otra activity
+        if (item.getItemId() == R.id.add_Library) {
+            Intent intent = new Intent(this, AddLibraryActivity.class); //para ir a otra activity
             startActivity(intent);
             return true;
         }

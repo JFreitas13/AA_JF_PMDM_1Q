@@ -18,46 +18,41 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/nameModifyEditText"
+            android:id="@+id/nameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nombre del libro"
+            android:hint="Nombre de la Libreria"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/yearModifyTextNumber"
+            android:id="@+id/cityTextNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Año de edición"
-            android:inputType="number"
-            android:minHeight="48dp" />
-
-        <EditText
-            android:id="@+id/pagesModifyTextNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Número de páginas"
-            android:inputType="number"
-            android:minHeight="48dp" />
-
-        <EditText
-            android:id="@+id/descriptionModifyEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Descripción"
+            android:hint="Ciudad"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
-        <CheckBox
-            android:id="@+id/checkBox2"
+        <EditText
+            android:id="@+id/zipCodeTextNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CheckBox" />
+            android:ems="10"
+            android:hint="Código Postal"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/phoneNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Telefono"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
 
     </LinearLayout>
 
@@ -70,19 +65,19 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
-            android:id="@+id/confirm_modify_book_button"
+            android:id="@+id/add_library_button"
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:onClick="modifyButton"
-            android:text="Confirmar" />
+            android:onClick="addButton"
+            android:text="Añadir" />
 
         <Button
-            android:id="@+id/cancel_modify_book_button"
+            android:id="@+id/cancel_add_library_button"
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:onClick="cancelModifyButton"
+            android:onClick="cancelButton"
             android:text="Cancelar" />
     </LinearLayout>
 

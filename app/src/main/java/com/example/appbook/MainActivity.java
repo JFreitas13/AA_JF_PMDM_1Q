@@ -20,6 +20,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, ListBooksActivity.class);
             startActivity(intent);
         });
+
+        button = findViewById(R.id.library_list);
+        button.setOnClickListener(view ->  {
+            Intent intent = new Intent(MainActivity.this, ListLibrariesActivity.class);
+            startActivity(intent);
+        });
     }
 
 }

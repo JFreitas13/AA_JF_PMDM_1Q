@@ -9,8 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class Library {
 
@@ -25,9 +23,24 @@ public class Library {
     @ColumnInfo //(name = "phoneNumber")
     private String phoneNumber;
 
-//    public Library() {
-//    }
-//
+    public Library() {
+    }
+
+    public Library(long id, String name, String city, String zipCode, String phoneNumber) {
+        this.id = id;
+        this.name = name;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Library(String name, String city, String zipCode, String phoneNumber) {
+        this.name = name;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
+    }
+
     public long getId() {
         return id;
     }

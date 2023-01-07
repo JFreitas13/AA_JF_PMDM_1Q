@@ -1,0 +1,95 @@
+package com.example.appbook;
+
+import static com.example.appbook.db.Constants.DATABASE_NAME;
+
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.database.sqlite.SQLiteConstraintException;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+
+import com.example.appbook.db.AppDatabase;
+import com.example.appbook.domain.Library;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
+
+public class ModifyLibraryActivity extends AppCompatActivity {
+
+    private long libraryId; //id que vamos a modificar
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_modify_library);
+
+        Intent intent = new Intent(getIntent());
+        libraryId = getIntent().getLongExtra("library_id",0); //almacenados el id
+
+        //BBDD
+        final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
+                .allowMainThreadQueries().build();
+        Library library = db.libraryDao().getById(libraryId);
+        fillData(library);
+    }
+
+    public void modifyLibraryButton(View view) {
+        EditText etName = findViewById(R.id.nameLibraryModifyEditText);
+        EditText etCity = findViewById(R.id.cityLibraryModifyEditText);
+        EditText etZipCode = findViewById(R.id.zipCodeLibraryModifyEditText);
+        EditText etPhoneNumber = findViewById(R.id.phoneNumberLibraryModifyEditText);
+
+        String name = etName.getText().toString();
+        String city = etCity.getText().toString();
+        String zipCode = etZipCode.getText().toString();
+        String phoneNumber = etPhoneNumber.getText().toString();
+
+        Library library = new Library(libraryId, name, city, zipCode, phoneNumber);
+        final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
+                .allowMainThreadQueries().build();
+
+        try {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("¿Estás seguro que quieres modificar esta libreria?")
+                    .setTitle("Modificar libreria")
+                    .setPositiveButton("Yes", (dialog, id) -> { //boton de si
+//                                final AppDatabase dbM = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
+//                                        .allowMainThreadQueries().build();
+
+                        db.libraryDao().update(library); //metodo modificar
+
+                        Intent intent = new Intent(this, ModifyLibraryActivity.class);
+                        intent.putExtra("library_id", library.getId());
+                        this.startActivity(intent);
+                    })
+                    .setNegativeButton("No", (dialog, is) -> dialog.dismiss()); //boton del no
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        } catch (SQLiteConstraintException sce) {
+            Snackbar.make(etName, "Ha ocurrido un error. Comprueba lso datos e intentalo de nuevo", BaseTransientBottomBar.LENGTH_LONG);
+        }
+    }
+
+        //boton cancelar y volver atras
+
+
+        //datos nuevos
+        private void fillData(Library library) {
+            EditText etName = findViewById(R.id.nameLibraryModifyEditText);
+            EditText etCity = findViewById(R.id.cityLibraryModifyEditText);
+            EditText etZipCode = findViewById(R.id.zipCodeLibraryModifyEditText);
+            EditText etPhoneNumber = findViewById(R.id.phoneNumberLibraryModifyEditText);
+
+            etName.setText(library.getName());
+            etCity.setText(library.getCity());
+            etZipCode.setText(library.getZipCode());
+            etPhoneNumber.setText(library.getPhoneNumber());
+        }
+
+    public void cancelModifyButton(View view) {
+        onBackPressed();
+    }
+}

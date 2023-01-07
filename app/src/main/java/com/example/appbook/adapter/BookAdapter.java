@@ -121,5 +121,6 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
             dialog.show();
 
         }
+
     }
 }
