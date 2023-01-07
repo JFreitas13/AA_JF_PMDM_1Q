@@ -4,9 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @Entity
@@ -22,9 +20,23 @@ public class Library {
     private String zipCode;
     @ColumnInfo //(name = "phoneNumber")
     private String phoneNumber;
+    @ColumnInfo
+    private double latitude;
+    @ColumnInfo
+    private double longitude;
 
     public Library() {
     }
+
+//    public Library(long id, String name, String city, String zipCode, String phoneNumber, double latitude, double longitude) {
+//        this.id = id;
+//        this.name = name;
+//        this.city = city;
+//        this.zipCode = zipCode;
+//        this.phoneNumber = phoneNumber;
+//        this.latitude = latitude;
+//        this.longitude = longitude;
+//    }
 
     public Library(long id, String name, String city, String zipCode, String phoneNumber) {
         this.id = id;
@@ -39,6 +51,15 @@ public class Library {
         this.city = city;
         this.zipCode = zipCode;
         this.phoneNumber = phoneNumber;
+    }
+
+    public Library(String name, String city, String zipCode, String phoneNumber, double latitude, double longitud) {
+        this.name = name;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
+        this.latitude = latitude;
+        this.longitude = longitud;
     }
 
     public long getId() {
@@ -79,5 +100,21 @@ public class Library {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

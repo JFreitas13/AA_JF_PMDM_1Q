@@ -88,7 +88,7 @@ public class ModifyBookActivity extends AppCompatActivity {
             etName.setText(book.getName());
             etYearEdition.setText(book.getYearEditionString());
             etPageNumber.setText(book.getPagesNumberString());
-            etDescription.setText(book.getDescripcion());
+            etDescription.setText(book.getDescription());
         }
 
     public void cancelModifyButton(View view) {

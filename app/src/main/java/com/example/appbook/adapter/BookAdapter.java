@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,7 +45,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
         holder.bookName.setText(bookList.get(position).getName());
         holder.bookYearEdition.setText(bookList.get(position).getYearEditionString());
         holder.bookPageNumber.setText(bookList.get(position).getPagesNumberString());
-        holder.bookDescription.setText(bookList.get(position).getDescripcion());
+        holder.bookDescription.setText(bookList.get(position).getDescription());
     }
 
     @Override

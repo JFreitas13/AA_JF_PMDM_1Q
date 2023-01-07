@@ -74,7 +74,11 @@ public class ListLibrariesActivity extends AppCompatActivity {
             Intent intent = new Intent(this, AddLibraryActivity.class); //para ir a otra activity
             startActivity(intent);
             return true;
-        }
+        } else if (item.getItemId() == R.id.view_map) {
+            Intent intent = new Intent(this, MapsActivity.class);
+            startActivity(intent);
+            }
+
         return false;
     }
 }

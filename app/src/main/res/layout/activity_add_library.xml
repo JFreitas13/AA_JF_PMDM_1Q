@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".AddLibraryActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -18,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/name_library_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -27,7 +28,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/cityTextNumber"
+            android:id="@+id/city_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -36,7 +37,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/zipCodeTextNumber"
+            android:id="@+id/zip_code_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -45,7 +46,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/phoneNumberEditText"
+            android:id="@+id/phone_number_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -57,12 +58,12 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
             android:id="@+id/add_library_button"
@@ -80,5 +81,24 @@
             android:onClick="cancelButton"
             android:text="Cancelar" />
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <com.mapbox.maps.MapView
+            android:id="@+id/libraryMapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:mapbox_cameraTargetLat="40.7128"
+            app:mapbox_cameraTargetLng="-74.0060"
+            app:mapbox_cameraZoom="9.0">
+        </com.mapbox.maps.MapView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

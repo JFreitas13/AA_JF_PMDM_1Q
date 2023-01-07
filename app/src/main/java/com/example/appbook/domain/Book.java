@@ -25,9 +25,9 @@ public class Book {
     @ColumnInfo
     private int pagesNumber;
     @ColumnInfo
-    private String descripcion;
+    private String description;
     @ColumnInfo
-    private boolean ebook;
+    private boolean read;
     @ColumnInfo //(name = "id_publisher")
     private long idPublisher;
 
@@ -36,7 +36,7 @@ public class Book {
         this.name = name;
         this.yearEdition = yearEdition;
         this.pagesNumber = pagesNumber;
-        this.descripcion = descripcion;
+        this.description = descripcion;
         /*this.ebook = ebook;*/
     }
 
@@ -44,7 +44,7 @@ public class Book {
         this.name = name;
         this.yearEdition = yearEdition;
         this.pagesNumber = pagesNumber;
-        this.descripcion = descripcion;
+        this.description = descripcion;
         /*this.ebook = ebook;*/
     }
 
@@ -94,20 +94,20 @@ public class Book {
         this.pagesNumber = pagesNumber;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public boolean isEbook() {
-        return ebook;
+    public boolean isRead() {
+        return read;
     }
 
-    public void setEbook(boolean ebook) {
-        this.ebook = ebook;
+    public void setRead(boolean read) {
+        this.read = read;
     }
 
     public long getIdPublisher() {

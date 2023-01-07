@@ -4,6 +4,7 @@ import static com.example.appbook.db.Constants.DATABASE_NAME;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -12,8 +13,10 @@ import androidx.room.Room;
 
 import com.example.appbook.db.AppDatabase;
 import com.example.appbook.domain.Book;
+import com.mapbox.maps.MapView;
 
 public class AddBookActivity extends AppCompatActivity {
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
