@@ -5,15 +5,12 @@ import static com.example.appbook.db.Constants.DATABASE_NAME;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import com.example.appbook.db.AppDatabase;
-import com.example.appbook.domain.Book;
 import com.example.appbook.domain.Library;
 
 public class LibraryDetailsActivity extends AppCompatActivity {
@@ -50,6 +47,5 @@ public class LibraryDetailsActivity extends AppCompatActivity {
     //boton CANCELAR
     public void returnButton(View view) {
         onBackPressed();
-
     }
 }

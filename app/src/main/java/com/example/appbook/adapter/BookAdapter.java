@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -104,8 +103,8 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
 
             //Dialogo para confirmar que se quiere eliminar
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setMessage("¿Estás seguro que quieres eliminar este libro?")
-                    .setTitle("Eliminar Libro")
+            builder.setMessage(R.string.are_you_sure_delete_book_message)
+                    .setTitle(R.string.delete_book_title)
                     .setPositiveButton("Yes", (dialog, id) -> { //añadir boton de si
 
                 //conectar BBDD

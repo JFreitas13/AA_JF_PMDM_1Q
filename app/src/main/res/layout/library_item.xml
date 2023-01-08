@@ -17,26 +17,22 @@
         android:id="@+id/library_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textSize="16sp" />
 
     <TextView
         android:id="@+id/library_city"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/library_zip_code"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/library_phone_number"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -49,21 +45,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="VER" />
+            android:text="@string/see_button" />
 
         <Button
             android:id="@+id/modify_library_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Modificar" />
+            android:text="@string/modify_button" />
 
         <Button
             android:id="@+id/delete_library_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="ELIMINAR" />
+            android:text="@string/delete_button" />
     </LinearLayout>
 
 </LinearLayout>

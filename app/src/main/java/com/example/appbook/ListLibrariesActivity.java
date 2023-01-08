@@ -78,7 +78,6 @@ public class ListLibrariesActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MapsActivity.class);
             startActivity(intent);
             }
-
         return false;
     }
 }

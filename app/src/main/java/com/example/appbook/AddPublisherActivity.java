@@ -10,9 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
-import com.example.appbook.R;
 import com.example.appbook.db.AppDatabase;
-import com.example.appbook.domain.Book;
 import com.example.appbook.domain.Publisher;
 
 public class AddPublisherActivity extends AppCompatActivity {
@@ -41,14 +39,14 @@ public class AddPublisherActivity extends AppCompatActivity {
         db.publisherDao().insert(publisher);
 
         //mensaje emergente
-        Toast.makeText(this, "Editorial añadida correctamente", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.publisher_add_message, Toast.LENGTH_SHORT).show();
         etName.setText("");
         etPhoneNumber.setText("");
         etDescription.setText("");
         etName.requestFocus();
-
-        //boton CANCELAR
     }
+
+    //boton CANCELAR
     public void cancelPublisherButton(View view) {
         onBackPressed();
 

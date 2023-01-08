@@ -14,12 +14,10 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
-import com.example.appbook.ModifyBookActivity;
 import com.example.appbook.ModifyPublisherActivity;
 import com.example.appbook.PublisherDetailsActivity;
 import com.example.appbook.R;
 import com.example.appbook.db.AppDatabase;
-import com.example.appbook.domain.Book;
 import com.example.appbook.domain.Publisher;
 
 import java.util.List;
@@ -102,8 +100,8 @@ public class PublisherAdapter extends RecyclerView.Adapter<PublisherAdapter.Publ
 
             //Dialogo para confirmar que se quiere eliminar
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setMessage("¿Estás seguro que quieres eliminar esta Editorial?")
-                    .setTitle("Eliminar Editorial")
+            builder.setMessage(R.string.are_you_sure_publisher_delete_message)
+                    .setTitle(R.string.delete_publisher_title)
                     .setPositiveButton("Yes", (dialog, id) -> { //añadir boton de si
 
                 //conectar BBDD

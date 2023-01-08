@@ -5,6 +5,6 @@
     <item
         android:id="@+id/add_Publisher"
         android:icon="@android:drawable/ic_menu_add"
-        android:title="Añadir Editorial"
+        android:title="@string/add_publisher_actionbar"
         app:showAsAction="always" />
 </menu>

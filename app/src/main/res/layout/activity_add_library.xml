@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nombre de la Libreria"
+            android:hint="@string/name_library_label"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Ciudad"
+            android:hint="@string/city_library_label"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Código Postal"
+            android:hint="@string/zip_code_library_label"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Telefono"
+            android:hint="@string/phone_label"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
@@ -71,7 +71,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:onClick="addButton"
-            android:text="Añadir" />
+            android:text="@string/add_button" />
 
         <Button
             android:id="@+id/cancel_add_library_button"
@@ -79,7 +79,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:onClick="cancelButton"
-            android:text="Cancelar" />
+            android:text="@string/cancel_button" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

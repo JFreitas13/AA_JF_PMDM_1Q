@@ -7,7 +7,6 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
@@ -64,8 +63,8 @@ public class AddLibraryActivity extends AppCompatActivity {
 
         //hacemos if para el caso de que el usuario no elija una ubicación y no de error a grabar al entrada
         if (point == null) {
-            //Snackbar.make(etName, "Elige una ubicación", BaseTransientBottomBar.LENGTH_LONG);
-            Toast.makeText(this,"Elige una ubicación", Toast.LENGTH_SHORT).show();
+            Snackbar.make(etName, R.string.choose_location_message, BaseTransientBottomBar.LENGTH_LONG);
+            //Toast.makeText(this,"Elige una ubicación", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -86,7 +85,7 @@ public class AddLibraryActivity extends AppCompatActivity {
             etPhoneNumber.setText("");
             etName.requestFocus();
         } catch (SQLiteConstraintException sce) {
-            Snackbar.make(etName, "Ha ocurrido un error. Comprueba los datos e intentalo de nuevo.", BaseTransientBottomBar.LENGTH_LONG);
+            Snackbar.make(etName, R.string.error_message, BaseTransientBottomBar.LENGTH_LONG);
         }
     }
 
@@ -100,7 +99,6 @@ public class AddLibraryActivity extends AppCompatActivity {
         //boton CANCELAR
     public void cancelButton(View view) {
         onBackPressed();
-
     }
 
     //añadir red marker en el mapa

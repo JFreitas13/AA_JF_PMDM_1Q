@@ -17,26 +17,22 @@
         android:id="@+id/book_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textSize="16sp" />
 
     <TextView
         android:id="@+id/book_pageNumber"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/book_yearEdition"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/book_description"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -49,21 +45,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="VER" />
+            android:text="@string/see_button" />
 
         <Button
             android:id="@+id/modify_book_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Modificar" />
+            android:text="@string/modify_button" />
 
         <Button
             android:id="@+id/delete_book_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="ELIMINAR" />
+            android:text="@string/delete_button" />
     </LinearLayout>
 
 </LinearLayout>

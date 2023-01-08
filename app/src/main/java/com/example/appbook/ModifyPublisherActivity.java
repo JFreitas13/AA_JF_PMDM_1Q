@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import com.example.appbook.db.AppDatabase;
-import com.example.appbook.domain.Book;
 import com.example.appbook.domain.Publisher;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
@@ -52,11 +51,9 @@ public class ModifyPublisherActivity extends AppCompatActivity {
 
         try {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("¿Estás seguro que quieres modificar esta Editorial?")
-                    .setTitle("Modificar Editorial")
+            builder.setMessage(R.string.are_you_sure_modify_publisher_message)
+                    .setTitle(R.string.modify_publisher_title)
                     .setPositiveButton("Yes", (dialog, id) -> { //boton de si
-//                                final AppDatabase dbM = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
-//                                        .allowMainThreadQueries().build();
 
                         db.publisherDao().update(publisher); //metodo modificar
 
@@ -68,12 +65,9 @@ public class ModifyPublisherActivity extends AppCompatActivity {
             AlertDialog dialog = builder.create();
             dialog.show();
         } catch (SQLiteConstraintException sce) {
-            Snackbar.make(etName, "Ha ocurrido un error. Comprueba los datos e intentalo de nuevo", BaseTransientBottomBar.LENGTH_LONG);
+            Snackbar.make(etName, R.string.error_message, BaseTransientBottomBar.LENGTH_LONG);
         }
     }
-
-        //boton cancelar y volver atras
-
 
         //datos nuevos
         private void fillData(Publisher publisher) {
@@ -86,6 +80,7 @@ public class ModifyPublisherActivity extends AppCompatActivity {
             etDescription.setText(publisher.getDescription());
         }
 
+    //boton cancelar y volver atras
     public void cancelModifyButton(View view) {
         onBackPressed();
     }

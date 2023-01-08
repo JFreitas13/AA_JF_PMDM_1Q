@@ -7,14 +7,9 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+//TODO clase
 //una libreria tiene N libros y 1 libro se puede estar en N librerias. Relacion N a N.
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Entity(foreignKeys = {
         @ForeignKey(entity = Book.class, parentColumns = "id", childColumns = "idBook", onDelete = CASCADE),
         @ForeignKey(entity = Library.class, parentColumns = "id", childColumns = "idLibrary", onDelete = CASCADE)

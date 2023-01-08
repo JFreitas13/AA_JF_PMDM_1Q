@@ -36,7 +36,6 @@ public class MapsActivity extends AppCompatActivity {
         initializePointManager();
 
         //conectamos a BBDD para coger los objetos
-
         final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
                 .allowMainThreadQueries().build();
         List<Library> libraries = db.libraryDao().getAll();
@@ -49,7 +48,6 @@ public class MapsActivity extends AppCompatActivity {
             Point point = Point.fromLngLat(library.getLongitude(), library.getLatitude());
             addMarker(point, library.getName());
         }
-
         Library lastLibrary = libraries.get(libraries.size() - 1); //ultima ubicacion
         setCameraPosition(Point.fromLngLat(lastLibrary.getLongitude(), lastLibrary.getLatitude()));
     }

@@ -6,9 +6,7 @@ import androidx.room.PrimaryKey;
 
 import lombok.NonNull;
 
-//@Data
-//@AllArgsConstructor
-//@NoArgsConstructor
+
 //@Entity(foreignKeys = {
 //        @ForeignKey(entity = Publisher.class, parentColumns = "id", childColumns = "idPublisher", onDelete = CASCADE)
 //})

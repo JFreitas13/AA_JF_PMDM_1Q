@@ -21,7 +21,7 @@
             android:id="@+id/main_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:contentDescription="@string/imageDescription"
+            android:contentDescription="@string/image_description"
             app:srcCompat="@drawable/book"
             tools:ignore="ImageContrastCheck" />
 
@@ -29,7 +29,7 @@
             android:id="@+id/main_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="¿Qué deseas gestionar?"
+            android:text="@string/main_menu_title"
             android:textAlignment="center"
             android:textColor="@color/teal_700"
             android:textSize="34sp" />
@@ -42,7 +42,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:padding="10dp"
-            android:text="Libros" />
+            android:text="@string/books" />
 
         <Button
             android:id="@+id/library_list"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
-            android:text="Librerias" />
+            android:text="@string/libraries" />
 
         <Button
             android:id="@+id/publisher_list"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
-            android:text="Editoriales" />
+            android:text="@string/publishers" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

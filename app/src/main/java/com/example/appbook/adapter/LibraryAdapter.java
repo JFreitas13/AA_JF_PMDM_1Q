@@ -103,8 +103,8 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.LibraryH
 
             //Dialogo para confirmar que se quiere eliminar
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setMessage("¿Estás seguro que quieres eliminar esta libreria?")
-                    .setTitle("Eliminar Libreria")
+            builder.setMessage(R.string.are_you_sure_delete_library_message)
+                    .setTitle(R.string.delete_library_message)
                     .setPositiveButton("Yes", (dialog, id) -> { //añadir boton de si
 
                 //conectar BBDD

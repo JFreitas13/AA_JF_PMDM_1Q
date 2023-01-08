@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nombre de la Editorial"
+            android:hint="@string/name_publisher_label"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Telefono"
+            android:hint="@string/phone_label"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Descripción"
+            android:hint="@string/description_label"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
@@ -62,7 +62,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:onClick="addPublisherButton"
-            android:text="Añadir" />
+            android:text="@string/add_button" />
 
         <Button
             android:id="@+id/cancel_add_publisher_button"
@@ -70,7 +70,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:onClick="cancelPublisherButton"
-            android:text="Cancelar" />
+            android:text="@string/cancel_button" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

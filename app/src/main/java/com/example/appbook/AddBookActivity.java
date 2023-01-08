@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -19,7 +18,6 @@ import androidx.room.Room;
 
 import com.example.appbook.db.AppDatabase;
 import com.example.appbook.domain.Book;
-import com.mapbox.maps.MapView;
 
 public class AddBookActivity extends AppCompatActivity {
 
@@ -72,10 +70,9 @@ public class AddBookActivity extends AppCompatActivity {
         etPageNumber.setText("");
         etDescription.setText("");
         etName.requestFocus();
-
-
-        //boton CANCELAR
     }
+
+    //boton CANCELAR
     public void cancelButton(View view) {
         onBackPressed();
     }

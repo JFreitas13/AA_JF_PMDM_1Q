@@ -5,11 +5,11 @@
     <item
         android:id="@+id/add_Library"
         android:icon="@android:drawable/ic_menu_add"
-        android:title="Añadir Libreria"
+        android:title="@string/add_library_actionbar"
         app:showAsAction="always" />
     <item
         android:id="@+id/view_map"
         android:icon="@android:drawable/ic_dialog_map"
-        android:title="Ver mapa"
+        android:title="@string/see_maps"
         app:showAsAction="always" />
 </menu>

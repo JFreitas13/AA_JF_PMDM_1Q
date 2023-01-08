@@ -7,7 +7,6 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.example.appbook.domain.Library;
-import com.example.appbook.domain.Publisher;
 
 import java.util.List;
 

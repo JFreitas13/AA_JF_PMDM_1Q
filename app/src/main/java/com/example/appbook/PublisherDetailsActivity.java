@@ -6,13 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import com.example.appbook.db.AppDatabase;
-import com.example.appbook.domain.Library;
 import com.example.appbook.domain.Publisher;
 
 public class PublisherDetailsActivity extends AppCompatActivity {
@@ -32,7 +30,6 @@ public class PublisherDetailsActivity extends AppCompatActivity {
                 .allowMainThreadQueries().build();
         Publisher publisher = db.publisherDao().getByName(name);
         fillData(publisher);
-
     }
 
     private void fillData(Publisher publisher) {
@@ -48,6 +45,5 @@ public class PublisherDetailsActivity extends AppCompatActivity {
     //boton CANCELAR
     public void returnButton(View view) {
         onBackPressed();
-
     }
 }

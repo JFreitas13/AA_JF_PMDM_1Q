@@ -53,11 +53,9 @@ public class ModifyLibraryActivity extends AppCompatActivity {
 
         try {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("¿Estás seguro que quieres modificar esta libreria?")
-                    .setTitle("Modificar libreria")
+            builder.setMessage(R.string.are_you_sure_modify_library_message)
+                    .setTitle(R.string.modify_library_title)
                     .setPositiveButton("Yes", (dialog, id) -> { //boton de si
-//                                final AppDatabase dbM = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
-//                                        .allowMainThreadQueries().build();
 
                         db.libraryDao().update(library); //metodo modificar
 
@@ -69,12 +67,9 @@ public class ModifyLibraryActivity extends AppCompatActivity {
             AlertDialog dialog = builder.create();
             dialog.show();
         } catch (SQLiteConstraintException sce) {
-            Snackbar.make(etName, "Ha ocurrido un error. Comprueba lso datos e intentalo de nuevo", BaseTransientBottomBar.LENGTH_LONG);
+            Snackbar.make(etName, R.string.error_message, BaseTransientBottomBar.LENGTH_LONG);
         }
     }
-
-        //boton cancelar y volver atras
-
 
         //datos nuevos
         private void fillData(Library library) {
@@ -89,6 +84,7 @@ public class ModifyLibraryActivity extends AppCompatActivity {
             etPhoneNumber.setText(library.getPhoneNumber());
         }
 
+    //boton cancelar y volver atras
     public void cancelModifyButton(View view) {
         onBackPressed();
     }

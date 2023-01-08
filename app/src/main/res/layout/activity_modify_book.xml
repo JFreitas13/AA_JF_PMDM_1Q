@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nombre del libro"
+            android:hint="@string/book_name_label"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Año de edición"
+            android:hint="@string/year_edition_book_label"
             android:inputType="number"
             android:minHeight="48dp" />
 
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Número de páginas"
+            android:hint="@string/page_number_book_label"
             android:inputType="number"
             android:minHeight="48dp" />
 
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Descripción"
+            android:hint="@string/description_label"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
@@ -69,7 +69,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:onClick="modifyButton"
-            android:text="Confirmar" />
+            android:text="@string/confirm_button" />
 
         <Button
             android:id="@+id/cancel_modify_book_button"
@@ -77,7 +77,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:onClick="cancelModifyButton"
-            android:text="Cancelar" />
+            android:text="@string/cancel_button" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
