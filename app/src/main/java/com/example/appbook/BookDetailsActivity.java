@@ -18,7 +18,7 @@ import com.example.appbook.domain.Book;
 public class BookDetailsActivity extends AppCompatActivity {
 
     @Override
-    protected  void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_details);
 
@@ -43,8 +43,6 @@ public class BookDetailsActivity extends AppCompatActivity {
         tvYearEditionS.setText(book.getYearEditionString());
         tvPagesNumber.setText(book.getPagesNumberString());
         tvDescripton.setText(book.getDescription());
-
-
     }
 
     //boton CANCELAR

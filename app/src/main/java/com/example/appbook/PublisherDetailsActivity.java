@@ -5,12 +5,14 @@ import static com.example.appbook.db.Constants.DATABASE_NAME;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import com.example.appbook.db.AppDatabase;
+import com.example.appbook.domain.Library;
 import com.example.appbook.domain.Publisher;
 
 public class PublisherDetailsActivity extends AppCompatActivity {
@@ -29,9 +31,18 @@ public class PublisherDetailsActivity extends AppCompatActivity {
         final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
                 .allowMainThreadQueries().build();
         Publisher publisher = db.publisherDao().getByName(name);
+        fillData(publisher);
 
-        //todo terminar mostrando layout
-        Toast.makeText(this, "Libreria" + publisher.getName(), Toast.LENGTH_SHORT).show();
+    }
+
+    private void fillData(Publisher publisher) {
+        TextView tvName = findViewById(R.id.publisher_name_details);
+        TextView tvPhoneNumber = findViewById(R.id.publisher_phone_number_details);
+        TextView tvDescription = findViewById(R.id.publisher_description_details);
+
+        tvName.setText(publisher.getName());
+        tvPhoneNumber.setText(publisher.getPhoneNumber());
+        tvDescription.setText(publisher.getDescription());
     }
 
     //boton CANCELAR
