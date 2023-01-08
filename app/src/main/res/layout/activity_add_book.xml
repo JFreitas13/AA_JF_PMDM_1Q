@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -56,12 +56,26 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayoutImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/imv_add_book"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ImageView
+            android:id="@+id/book_add_image"
+            android:layout_width="match_parent"
+            android:layout_height="508dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/imv_add_book"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
             android:id="@+id/add_book_button"
@@ -72,12 +86,21 @@
             android:text="Añadir" />
 
         <Button
+            android:id="@+id/camara_add_book_button"
+            android:layout_width="136dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:onClick="addImageBook"
+            android:text="FOTO" />
+
+        <Button
             android:id="@+id/cancel_add_book_button"
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"
             android:onClick="cancelButton"
             android:text="Cancelar" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,13 +7,23 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="408dp"
-        android:layout_height="659dp"
+        android:id="@+id/linearLayout4"
+        android:layout_width="415dp"
+        android:layout_height="648dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/main_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="@string/imageDescription"
+            app:srcCompat="@drawable/book"
+            tools:ignore="ImageContrastCheck" />
 
         <TextView
             android:id="@+id/main_text"
@@ -28,7 +38,7 @@
             android:id="@+id/book_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:padding="10dp"
@@ -38,7 +48,7 @@
             android:id="@+id/library_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:text="Librerias" />
 
@@ -46,23 +56,9 @@
             android:id="@+id/publisher_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:text="Editoriales" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/main_image"
-            android:layout_width="match_parent"
-            android:layout_height="232dp"
-            android:contentDescription="@string/imageDescription"
-            tools:ignore="ImageContrastCheck"
-            tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
