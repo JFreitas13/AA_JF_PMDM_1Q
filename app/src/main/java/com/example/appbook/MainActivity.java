@@ -26,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, ListLibrariesActivity.class);
             startActivity(intent);
         });
+
+        button = findViewById(R.id.publisher_list);
+        button.setOnClickListener(view ->  {
+            Intent intent = new Intent(MainActivity.this, ListPublisherActivity.class);
+            startActivity(intent);
+        });
     }
 
 }

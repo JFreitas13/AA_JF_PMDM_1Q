@@ -34,6 +34,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".ListPublisherActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".BookDetailsActivity"
             android:exported="false">
             <meta-data
@@ -42,6 +49,13 @@
         </activity>
         <activity
             android:name=".LibraryDetailsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".PublisherDetailsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -62,6 +76,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".AddPublisherActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ModifyBookActivity"
             android:exported="false">
             <meta-data
@@ -70,6 +91,13 @@
         </activity>
         <activity
             android:name=".ModifyLibraryActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ModifyPublisherActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
