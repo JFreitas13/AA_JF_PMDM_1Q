@@ -4,18 +4,12 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class Library {
 
     @PrimaryKey(autoGenerate = true)
-    private long id;
+    private long libraryId;
     @ColumnInfo
     private String name;
     @ColumnInfo
@@ -24,16 +18,54 @@ public class Library {
     private String zipCode;
     @ColumnInfo //(name = "phoneNumber")
     private String phoneNumber;
+    @ColumnInfo
+    private double latitude;
+    @ColumnInfo
+    private double longitude;
 
     public Library() {
     }
 
-    public long getId() {
-        return id;
+//    public Library(long id, String name, String city, String zipCode, String phoneNumber, double latitude, double longitude) {
+//        this.id = id;
+//        this.name = name;
+//        this.city = city;
+//        this.zipCode = zipCode;
+//        this.phoneNumber = phoneNumber;
+//        this.latitude = latitude;
+//        this.longitude = longitude;
+//    }
+
+    public Library(long libraryId, String name, String city, String zipCode, String phoneNumber) {
+        this.libraryId = libraryId;
+        this.name = name;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public Library(String name, String city, String zipCode, String phoneNumber) {
+        this.name = name;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Library(String name, String city, String zipCode, String phoneNumber, double latitude, double longitud) {
+        this.name = name;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
+        this.latitude = latitude;
+        this.longitude = longitud;
+    }
+
+    public long getLibraryId() {
+        return libraryId;
+    }
+
+    public void setLibraryId(long libraryId) {
+        this.libraryId = libraryId;
     }
 
     public String getName() {
@@ -66,5 +98,21 @@ public class Library {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

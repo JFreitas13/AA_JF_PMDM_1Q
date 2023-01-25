@@ -7,7 +7,6 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.example.appbook.domain.Library;
-import com.example.appbook.domain.Publisher;
 
 import java.util.List;
 
@@ -23,14 +22,14 @@ public interface LibraryDao {
     Library getByName(String name);
 
     //buscar por id
-    @Query("SELECT * FROM library WHERE id = :id")
-    Library getById(long id);
+    @Query("SELECT * FROM library WHERE libraryId = :id")
+    Library getByLibraryId(long id);
 
     //borrar por id
-    @Query("DELETE FROM library WHERE id = :id")
+    @Query("DELETE FROM library WHERE libraryId = :id")
     void deleteById(long id);
 
-    //si quiero inserir uno o varios debo escribir void insert(Book... book)
+    //si quiero inserir uno o varios debo escribir void insert(Library... Library)
     @Insert
     void insert(Library library);
 

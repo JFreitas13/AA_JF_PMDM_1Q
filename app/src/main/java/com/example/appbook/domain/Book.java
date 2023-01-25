@@ -1,59 +1,99 @@
 package com.example.appbook.domain;
 
 import static androidx.room.ForeignKey.CASCADE;
+import static androidx.room.ForeignKey.SET_NULL;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity(foreignKeys = {
-        @ForeignKey(entity = Publisher.class, parentColumns = "id", childColumns = "idPublisher", onDelete = CASCADE)
-})
+@Entity(tableName = "books",
+        foreignKeys = {
+            @ForeignKey(entity = Library.class, parentColumns = "libraryId", childColumns = "library_id", onDelete = SET_NULL),
+            @ForeignKey(entity = Publisher.class, parentColumns = "publisherId", childColumns = "publisher_id", onDelete = SET_NULL)
+        })
 public class Book {
 
     @PrimaryKey(autoGenerate = true)
-    private long id;
+    private long bookId;
     @ColumnInfo
-    @NonNull
+    public long library_id; //Id de la libreria
+    @ColumnInfo
+    public long publisher_id; //id de la editorial
+    @ColumnInfo
     private String name;
     @ColumnInfo
     private int yearEdition;
     @ColumnInfo
     private int pagesNumber;
     @ColumnInfo
-    private String descripcion;
+    private String description;
     @ColumnInfo
-    private boolean ebook;
-    @ColumnInfo //(name = "id_publisher")
-    private long idPublisher;
+    private boolean read;
 
-//    public Book(long id, String name, int yearEdition, int pagesNumber, String descripcion, boolean ebook) {
-//        this.id = id;
-//        this.name = name;
-//        this.yearEdition = yearEdition;
-//        this.pagesNumber = pagesNumber;
-//        this.descripcion = descripcion;
-//        this.ebook = ebook;
-//    }
+    public Book(long bookId, long library_id, long publisher_id, String name, int yearEdition, int pagesNumber, String description, boolean read) {
+        this.bookId = bookId;
+        this.library_id = library_id;
+        this.publisher_id = publisher_id;
+        this.name = name;
+        this.yearEdition = yearEdition;
+        this.pagesNumber = pagesNumber;
+        this.description = description;
+        this.read = read;
+    }
+
+    public Book(String name, int yearEdition, int pagesNumber, String description) {
+        this.name = name;
+        this.yearEdition = yearEdition;
+        this.pagesNumber = pagesNumber;
+        this.description = description;
+    }
 
     public Book() {
     }
 
-    public long getId() {
-        return id;
+    public Book( long library_id, long publisher_id, String name, int yearEdition, int pagesNumber, String description, boolean read) {
+        this.name = name;
+        this.yearEdition = yearEdition;
+        this.pagesNumber = pagesNumber;
+        this.description = description;
+        this.library_id = library_id;
+        this.publisher_id = publisher_id;
+        this.read = read;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public Book(String name, int yearEdition, int pagesNumber, String description, boolean read) {
+        this.name = name;
+        this.yearEdition = yearEdition;
+        this.pagesNumber = pagesNumber;
+        this.description = description;
+        this.read = read;
+
+    }
+
+    public long getLibrary_id() {
+        return library_id;
+    }
+
+    public void setLibrary_id(long library_id) {
+        this.library_id = library_id;
+    }
+
+    public long getPublisher_id() {
+        return publisher_id;
+    }
+
+    public void setPublisher_id(long publisher_id) {
+        this.publisher_id = publisher_id;
+    }
+
+    public long getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(long bookId) {
+        this.bookId = bookId;
     }
 
     public String getName() {
@@ -68,6 +108,12 @@ public class Book {
         return yearEdition;
     }
 
+    public String getYearEditionString() {
+
+        String yearEditionString = String.valueOf(yearEdition);
+        return yearEditionString;
+    }
+
     public void setYearEdition(int yearEdition) {
         this.yearEdition = yearEdition;
     }
@@ -76,31 +122,29 @@ public class Book {
         return pagesNumber;
     }
 
+    public String getPagesNumberString() {
+        String pagesNumberString = String.valueOf(pagesNumber);
+        return pagesNumberString;
+    }
+
     public void setPagesNumber(int pagesNumber) {
         this.pagesNumber = pagesNumber;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public boolean isEbook() {
-        return ebook;
+    public boolean isRead() {
+        return read;
     }
 
-    public void setEbook(boolean ebook) {
-        this.ebook = ebook;
+    public void setRead(boolean read) {
+        this.read = read;
     }
 
-    public long getIdPublisher() {
-        return idPublisher;
-    }
-
-    public void setIdPublisher(long idPublisher) {
-        this.idPublisher = idPublisher;
-    }
 }

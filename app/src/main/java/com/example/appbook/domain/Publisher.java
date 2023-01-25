@@ -4,40 +4,40 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class Publisher {
 
     @PrimaryKey (autoGenerate = true)
-    private long id;
+    private long publisherId;
     @ColumnInfo
-    @NonNull
     private String name;
     @ColumnInfo
-    private String city;
-    @ColumnInfo //(name = "zip_code")
-    private String zipCode;
-    @ColumnInfo //(name = "phone_number")
     private String phoneNumber;
     @ColumnInfo
-    private String descripriton;
+    private String description;
 
     public Publisher() {
     }
 
-    public long getId() {
-        return id;
+    public Publisher(String name, String phoneNumber, String description) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.description = description;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public Publisher(long publisherId, String name, String phoneNumber, String description) {
+        this.publisherId = publisherId;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.description = description;
+    }
+
+    public long getPublisherId() {
+        return publisherId;
+    }
+
+    public void setPublisherId(long publisherId) {
+        this.publisherId = publisherId;
     }
 
     public String getName() {
@@ -48,22 +48,6 @@ public class Publisher {
         this.name = name;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getZipCode() {
-        return zipCode;
-    }
-
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -72,11 +56,11 @@ public class Publisher {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getDescripriton() {
-        return descripriton;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripriton(String descripriton) {
-        this.descripriton = descripriton;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
