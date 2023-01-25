@@ -1,7 +1,7 @@
 # AA_JF_PMDM_1Q
 ## Actividad de Aprendizaje de la asignatura de Programación Multimedia y Dispositivos Móviles - 1Q
 
-La relación Lirary-Book se ha considerado una 1-N para la realización de esta actividad.
+La relación Library-Book se ha considerado una 1-N para la realización de esta actividad.
 
 ### Requisitos (1 pto cada uno, obligatorios)
 - [x] La aplicación contará con, al menos, 7 Activities, utilizando controles ImageView, TextView, Button, CheckBox y RecyclerView para recoger y presentar información en pantalla y se hará, como mínimo, en dos idiomas
