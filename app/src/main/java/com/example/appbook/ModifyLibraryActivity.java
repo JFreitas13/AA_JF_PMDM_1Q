@@ -27,12 +27,12 @@ public class ModifyLibraryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_modify_library);
 
         Intent intent = new Intent(getIntent());
-        libraryId = getIntent().getLongExtra("library_id",0); //almacenados el id
+        libraryId = getIntent().getLongExtra("libraryId",0); //almacenados el id
 
         //BBDD
         final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
                 .allowMainThreadQueries().build();
-        Library library = db.libraryDao().getById(libraryId);
+        Library library = db.libraryDao().getByLibraryId(libraryId);
         fillData(library);
     }
 
@@ -48,6 +48,7 @@ public class ModifyLibraryActivity extends AppCompatActivity {
         String phoneNumber = etPhoneNumber.getText().toString();
 
         Library library = new Library(libraryId, name, city, zipCode, phoneNumber);
+
         final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
                 .allowMainThreadQueries().build();
 
@@ -59,8 +60,8 @@ public class ModifyLibraryActivity extends AppCompatActivity {
 
                         db.libraryDao().update(library); //metodo modificar
 
-                        Intent intent = new Intent(this, ModifyLibraryActivity.class);
-                        intent.putExtra("library_id", library.getId());
+                        Intent intent = new Intent(this, ListLibrariesActivity.class);
+                        intent.putExtra("libraryId", library.getLibraryId());
                         this.startActivity(intent);
                     })
                     .setNegativeButton("No", (dialog, is) -> dialog.dismiss()); //boton del no

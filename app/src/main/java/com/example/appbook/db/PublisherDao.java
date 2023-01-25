@@ -1,6 +1,5 @@
 package com.example.appbook.db;
 
-import androidx.annotation.BoolRes;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -23,11 +22,11 @@ public interface PublisherDao {
     Publisher getByName(String name);
 
     //buscar por id
-    @Query("SELECT * FROM publisher WHERE id = :id")
+    @Query("SELECT * FROM publisher WHERE publisherId = :id")
     Publisher getById(long id);
 
     //borrar por id
-    @Query("DELETE FROM publisher WHERE id = :id")
+    @Query("DELETE FROM publisher WHERE publisherId = :id")
     void deleteById(long id);
 
     //añadir
@@ -41,6 +40,4 @@ public interface PublisherDao {
     //actualizar
     @Update
     void update(Publisher publisher);
-
-
 }

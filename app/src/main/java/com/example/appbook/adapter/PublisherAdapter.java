@@ -29,7 +29,7 @@ public class PublisherAdapter extends RecyclerView.Adapter<PublisherAdapter.Publ
 
     public PublisherAdapter(Context context, List<Publisher> dataList) {
         this.context = context;
-        this.publisherList = dataList; //lista de libros
+        this.publisherList = dataList; //lista de editoriales
     }
 
     @Override
@@ -72,9 +72,7 @@ public class PublisherAdapter extends RecyclerView.Adapter<PublisherAdapter.Publ
             deletePublisherButton = view.findViewById(R.id.delete_publisher_button);
 
             seePublisherButton.setOnClickListener(v -> seeDetails(getAdapterPosition()));
-
             modifyPublisherButton.setOnClickListener(v -> modifyPublisher(getAdapterPosition()));
-
             deletePublisherButton.setOnClickListener(v -> deletePublisher(getAdapterPosition()));
         }
 
@@ -83,7 +81,7 @@ public class PublisherAdapter extends RecyclerView.Adapter<PublisherAdapter.Publ
             Publisher publisher = publisherList.get(position);
 
             Intent intent = new Intent(context, PublisherDetailsActivity.class);
-            intent.putExtra("name", publisher.getName());
+            intent.putExtra("publisherId", publisher.getPublisherId());
             context.startActivity(intent);
         }
 
@@ -91,7 +89,7 @@ public class PublisherAdapter extends RecyclerView.Adapter<PublisherAdapter.Publ
             Publisher publisher = publisherList.get(position);
 
             Intent intent = new Intent(context, ModifyPublisherActivity.class);
-            intent.putExtra("publisher_id", publisher.getId());
+            intent.putExtra("publisherId", publisher.getPublisherId());
             context.startActivity(intent);
         }
 
@@ -116,8 +114,6 @@ public class PublisherAdapter extends RecyclerView.Adapter<PublisherAdapter.Publ
                     .setNegativeButton("No", (dialog, id) -> dialog.dismiss()); //boton del no
             AlertDialog dialog = builder.create();
             dialog.show();
-
         }
-
     }
 }

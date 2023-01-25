@@ -53,6 +53,30 @@
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
+        <EditText
+            android:id="@+id/bookLibraryEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/library"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/bookPublisherEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/publisher"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+        <CheckBox
+            android:id="@+id/cbAddBookRead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Read" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -66,7 +90,7 @@
         <ImageView
             android:id="@+id/book_add_image"
             android:layout_width="match_parent"
-            android:layout_height="508dp" />
+            android:layout_height="810dp" />
     </LinearLayout>
 
     <LinearLayout

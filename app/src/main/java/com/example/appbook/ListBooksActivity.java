@@ -23,8 +23,8 @@ import java.util.List;
 
 public class ListBooksActivity extends AppCompatActivity {
 
-    private List<Book> bookList;
-    private BookAdapter adapter;
+    private List<Book> bookList; //lista de libros
+    private BookAdapter adapter; //conexion con la BBDD
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +53,10 @@ public class ListBooksActivity extends AppCompatActivity {
 
         bookList.clear(); //vaciar la BBDD
         bookList.addAll(db.bookDao().getAll()); //cojo todos los elementos que devuelva la BBDD
-        adapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged(); //actualizacion desde BBDD
     }
 
+    //metodo al que llama el boton de regresar al menu principal
     public void mainReturnButton(View view) {
         onBackPressed();
     }

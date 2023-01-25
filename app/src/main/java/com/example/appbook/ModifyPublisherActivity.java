@@ -27,7 +27,7 @@ public class ModifyPublisherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_modify_publisher);
 
         Intent intent = new Intent(getIntent());
-        publisherId = getIntent().getLongExtra("publisher_id",0); //almacenados el id
+        publisherId = getIntent().getLongExtra("publisherId",0); //almacenados el id
 
         //BBDD
         final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
@@ -57,8 +57,8 @@ public class ModifyPublisherActivity extends AppCompatActivity {
 
                         db.publisherDao().update(publisher); //metodo modificar
 
-                        Intent intent = new Intent(this, ModifyPublisherActivity.class);
-                        intent.putExtra("publisher_id", publisher.getId());
+                        Intent intent = new Intent(this, ListPublisherActivity.class);
+                        intent.putExtra("publisherId", publisher.getPublisherId());
                         this.startActivity(intent);
                     })
                     .setNegativeButton("No", (dialog, is) -> dialog.dismiss()); //boton del no

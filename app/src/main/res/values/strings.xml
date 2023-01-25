@@ -45,4 +45,6 @@
     <string name="add_library_actionbar">Add library</string>
     <string name="see_maps">See maps</string>
     <string name="add_publisher_actionbar">Add publisher</string>
+    <string name="library">Library</string>
+    <string name="publisher">Publisher</string>
 </resources>

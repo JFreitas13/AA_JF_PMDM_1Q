@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import com.example.appbook.BookDetailsActivity;
+import com.example.appbook.LibraryDetailsActivity;
 import com.example.appbook.ModifyLibraryActivity;
 import com.example.appbook.R;
 import com.example.appbook.db.AppDatabase;
@@ -29,7 +30,7 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.LibraryH
 
     public LibraryAdapter(Context context, List<Library> dataList) {
         this.context = context;
-        this.libraryList = dataList; //lista de libros
+        this.libraryList = dataList; //lista de librerias
     }
 
     @Override
@@ -75,9 +76,7 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.LibraryH
             deleteLibraryButton = view.findViewById(R.id.delete_library_button);
 
             seeLibraryButton.setOnClickListener(v -> seeLibraryDetails(getAdapterPosition()));
-
             modifyLibraryButton.setOnClickListener(v -> modifyLibrary(getAdapterPosition()));
-
             deleteLibraryButton.setOnClickListener(v -> deleteLibrary(getAdapterPosition()));
         }
 
@@ -85,8 +84,8 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.LibraryH
         private void seeLibraryDetails(int position) {
             Library library = libraryList.get(position);
 
-            Intent intent = new Intent(context, BookDetailsActivity.class);
-            intent.putExtra("name", library.getName());
+            Intent intent = new Intent(context, LibraryDetailsActivity.class);
+            intent.putExtra("libraryId", library.getLibraryId());
             context.startActivity(intent);
         }
 
@@ -94,7 +93,7 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.LibraryH
            Library library = libraryList.get(position);
 
             Intent intent = new Intent(context, ModifyLibraryActivity.class);
-            intent.putExtra("library_id", library.getId());
+            intent.putExtra("libraryId", library.getLibraryId());
             context.startActivity(intent);
         }
 
@@ -119,7 +118,6 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.LibraryH
                     .setNegativeButton("No", (dialog, id) -> dialog.dismiss()); //boton del no
             AlertDialog dialog = builder.create();
             dialog.show();
-
         }
     }
 }

@@ -20,15 +20,13 @@ public class PublisherDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publisher_details);
 
+        //coger la editorial por el id
         Intent intent = getIntent();
-
-        String name = intent.getStringExtra("name");
-        if(name == null)
-            return;
+        long publisher_id = getIntent().getLongExtra("publisherId", 0);
 
         final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
                 .allowMainThreadQueries().build();
-        Publisher publisher = db.publisherDao().getByName(name);
+        Publisher publisher = db.publisherDao().getById(publisher_id);
         fillData(publisher);
     }
 

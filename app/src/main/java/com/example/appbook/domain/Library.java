@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 public class Library {
 
     @PrimaryKey(autoGenerate = true)
-    private long id;
+    private long libraryId;
     @ColumnInfo
     private String name;
     @ColumnInfo
@@ -36,8 +36,8 @@ public class Library {
 //        this.longitude = longitude;
 //    }
 
-    public Library(long id, String name, String city, String zipCode, String phoneNumber) {
-        this.id = id;
+    public Library(long libraryId, String name, String city, String zipCode, String phoneNumber) {
+        this.libraryId = libraryId;
         this.name = name;
         this.city = city;
         this.zipCode = zipCode;
@@ -60,12 +60,12 @@ public class Library {
         this.longitude = longitud;
     }
 
-    public long getId() {
-        return id;
+    public long getLibraryId() {
+        return libraryId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setLibraryId(long libraryId) {
+        this.libraryId = libraryId;
     }
 
     public String getName() {

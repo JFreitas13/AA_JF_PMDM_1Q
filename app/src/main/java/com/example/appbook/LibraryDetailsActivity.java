@@ -13,6 +13,8 @@ import androidx.room.Room;
 import com.example.appbook.db.AppDatabase;
 import com.example.appbook.domain.Library;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 public class LibraryDetailsActivity extends AppCompatActivity {
 
     @Override
@@ -20,15 +22,14 @@ public class LibraryDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library_details);
 
+        //coger el libreria por el id
         Intent intent = getIntent();
+        long library_id = getIntent().getLongExtra("libraryId", 0);
 
-        String name = intent.getStringExtra("name");
-        if (name == null)
-            return;
 
         final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
                 .allowMainThreadQueries().build();
-        Library library = db.libraryDao().getByName(name);
+        Library library = db.libraryDao().getByLibraryId(library_id);
         fillData(library);
     }
 

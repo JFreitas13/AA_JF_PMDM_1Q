@@ -32,10 +32,10 @@ public class MapsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        mapView = findViewById(R.id.mapView);
-        initializePointManager();
+        mapView = findViewById(R.id.mapView); //cargamos el mapa
+        initializePointManager(); //inicializamos el pointmanager
 
-        //conectamos a BBDD para coger los objetos
+        //conectamos a BBDD para coger los objetos que queremos pintar
         final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
                 .allowMainThreadQueries().build();
         List<Library> libraries = db.libraryDao().getAll();
@@ -49,7 +49,7 @@ public class MapsActivity extends AppCompatActivity {
             addMarker(point, library.getName());
         }
         Library lastLibrary = libraries.get(libraries.size() - 1); //ultima ubicacion
-        setCameraPosition(Point.fromLngLat(lastLibrary.getLongitude(), lastLibrary.getLatitude()));
+        setCameraPosition(Point.fromLngLat(lastLibrary.getLongitude(), lastLibrary.getLatitude())); //fijamos la camara en la ultima ubicacion
     }
 
     //iniciar pointManager

@@ -45,4 +45,6 @@
     <string name="add_library_actionbar">Añadir Libreria</string>
     <string name="see_maps">Ver mapa</string>
     <string name="add_publisher_actionbar">Añadir Editorial</string>
+    <string name="library">Library</string>
+    <string name="publisher">Publisher</string>
 </resources>
